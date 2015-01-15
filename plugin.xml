@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="advice2u.phonegap.plugins.openwith" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>openwidth</name>
+	<js-module name="openwidth" src="www/openwidth.js">
+		<clobbers target="cordova.plugins.openwidth"/>
+	</js-module>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="openwidth">
+				<param name="ios-package" value="CDVopenwidth"/>
+			</feature>
+		</config-file>
+		<source-file src="src/ios/CDVopenwidth.m"/>
+	</platform>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="openwidth">
+				<param name="android-package" value="advice2u.phonegap.plugins.openwith.openwidth"/>
+			</feature>
+		</config-file>
+		
+		<source-file src="src/android/openwidth.java" target-dir="src/advice2u/phonegap/plugins/openwith/openwidth"/>
+	</platform>
+</plugin>
